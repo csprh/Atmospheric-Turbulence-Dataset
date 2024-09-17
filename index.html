@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="atmospheric turbulence removal">
-    <meta name="author" content="Pui Anantrasirichai">
+    <meta name="description" content="Atmospheric-Turbulence-Dataset">
+    <meta name="author" content="Paul Hill">
     <meta name="keywords" content="atmospheric, turbulence, removal, heathaze, distortion, wavelet, deep learning, cnn">
     <title>CLEAR</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -41,7 +41,7 @@
   
                         <div class="col-md-10">
                             <div class="title">
-                                <h1>Atmospheric Distortions</h1>
+                                <h1>Atmospheric-Turbulence-Dataset</h1>
                                 <div class="container-sm">
                                     <div class="row justify-content-md-center">
 					<div class="col-sm-auto">
@@ -74,84 +74,60 @@
                 </div>
             </div>
             <div class="container-md">
-                <h2>Aim</h2>
-                <p>Various types of atmospheric distortion can influence the visual quality of video signals during acquisition. Typical distortions include fog or haze which reduce contrast, and atmospheric turbulence due to temperature variations or aerosols. An effect of temperature variation is observed as a change in the interference pattern of the light refraction, causing unclear, unsharp, waving images of the objects. This obviously makes the acquired imagery difficult to interpret.
+                <div style="word-wrap: break-word;">
+      <p></p><h2><strong>This dataset comprises 38 video sequences that contain various levels of atmospheric turbulence.</strong></h2>
+<h3>Paul Hill, The University of Bristol</h3>
+<div>Please contact Paul Hill for any further information&nbsp;</div>
+<div>Paul.Hill@bristol.ac.uk</div>
+<h3>Sequences</h3>
+<ul>
+<li>The sequences were captured to give a range of</li>
+<li>Distances</li>
+<li>Turbulence levels</li>
+<li>Content (mainly aligning with discussed content of interest e.g. vehicles, buildings, roads etc.)</li>
+<li>The camera used was a Cannon R5, with a Canon 100-400mm zoom lens</li>
+<li>The sequences were captured over a period of three days in different locations</li>
+</ul>
+<h3>Preprocessing</h3>
+<ul>
+<li>All the sequences were cropped in time to.&nbsp;</li>
+<li>Get manageable / easily processable sequences of length of approximately 20 seconds</li>
+<li>To remove unwanted artefacts (hands in front of lenses, people walking through the shot etc.)</li>
+<li>Cropped referred (in the Excel file) that they were spatially cropped from higher resolution sequences (to focus on more interesting / coherent content)</li>
+</ul>
+<div>&nbsp;</div>
+<h3>Sequence Descriptions</h3>
+<div>
+<ul>
+<li>The included Excel file: Heathaze_datasets_descriptions_2024.xlsx gives a detailed descriptiong each sequence.</li>
+</ul>
+</div>
+<div>Directory Structure</div>
+<div>.</div>
+<div>├── CLEAR1 &nbsp; # Static PNG image results of the CLEAR1 method</div>
+<div>├── CLEAR2 &nbsp; # Example AVI CLEAR2 sliding window processed sequences</div>
+<div>├── Original_Seqs &nbsp;# All Original Sequences in MP4 format</div>
+<div>&nbsp;│ &nbsp; └── PNGs &nbsp; &nbsp; &nbsp; # The raw original sequences in directories named after the MP4 seq files.&nbsp;</div>
+<div>&nbsp;</div>
+<ul>
+<li>CLEAR1: Region and Pixel refer to the pixel by pixel and region-based fusion defined in the original CLEAR paper:&nbsp;Anantrasirichai et al. "Atmospheric &nbsp;Turbulence Mitigation Using Complex Wavelet-Based Fusion," Image Processing, IEEE Transactions on , vol.22, no.6, pp.2398-2408, June 2013 &nbsp;&nbsp;</li>
+<li>CLEAR2: The outputs of an example CLEAR2 method output on the input sequences:&nbsp;Anantrasirichai et al. &nbsp;Atmospheric turbulence mitigation for sequences with moving objects using recursive image fusion", ICIP, pp. 2895-2899 2018.</li>
+<li>Original_Seqs: The PNGs are numbered in temporal order in each directory (named as per the MP4 seq files).</li>
+</ul>
+<p>&nbsp;</p><p></p>
+    </div>
 
-This project introduced a novel method for mitigating the effects of atmospheric distortion on observed images, particularly airborne turbulence which can severely degrade a region of interest (ROI). In order to provide accurate detail from objects behind the distorting layer, a simple and efficient frame selection method is proposed to pick informative ROIs from only good-quality frames. We solve the space-variant distortion problem using region-based fusion based on the Dual Tree Complex Wavelet Transform (DT-CWT). We also propose an object alignment method for pre-processing the ROI since this can exhibit significant offsets and distortions between frames. Simple haze removal is used as the final step. We refer to this algorithm as <a href="https://github.com/pui-nantheera/atmospheric-turbulence-removal">CLEAR</a> (Complex waveLEt fusion for Atmospheric tuRbulence).</p>
-
-        <div class="row">
-        <div class="col">
-        <dt>Funder</dt>
-            <dd>General Dynamics United Kingdom Limited, EPSRC Platform Grant, Vision for the Future (EP/M000885/1)</dd>
-        </div>
-        <div class="col">
-        <dt>Collaborators</dt>
-            <dd>Defence Science and Technology Laboratory (Dstl)</dd>
-        </div>
-        </div>
             </div>
             
-            <hr />
-            <div class="container-md">
-                <h2 id="achitecture">Framework</h2>
-                <p><img src="diagram.png" width="50%" /></p>
-            </div>    
-            <hr />
-            <div class="container-md">
-                <h2 id="downloads">Results</h2>
-            <h5 style="margin-top: 1em;">Atmospheric distorted videos of static scene</h5>
-                        <a name="seqeunces"></a>
-                        <p>Mirage (256x256 pixels, 50 frames). Left: distorted sequence. Right: restored image. <a href="https://data.bris.ac.uk/data/dataset/1yh1e51t7tg2g2q9cwv96sdfc2" target="_blank">Download PNG</a></p>
-                        <iframe width="320" height="280" src="https://www.youtube.com/embed/rTuCWir_7RU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <img style="vertical-align: top" src="restoredMirage.png" alt="Restored Mirage" height="280">
-                        <p>Monument (512x512 pixels, 100 frames). Left: distorted sequence. Right: restored image. <a href="https://data.bris.ac.uk/data/dataset/1yh1e51t7tg2g2q9cwv96sdfc2">Download PNG</a></p>
-                        <iframe width="320" height="280" src="https://www.youtube.com/embed/GosnJs8NCB0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <img style="vertical-align: top" src="restoredMonument.png" alt="Restored Monument" height="280">
-                        <p></p>
-                        <p>Simulated datasets, generated with gas burner turbulence, with three different amounts of distortions. <a href="https://data.bris.ac.uk/data/dataset/1yh1e51t7tg2g2q9cwv96sdfc2" target="_blank">Download PNG</a></p>
-                        <iframe width="420" height="280" src="https://www.youtube.com/embed/jM7dzmWnm2E?rel=0" frameborder="0" allowfullscreen></iframe> <img style="vertical-align: top" src="barcode.png" alt="Simulated data" height="280"> <img  style="vertical-align: top" src="simulateData.png" alt="Simulated data" height="280">
-            
-            <h5 style="margin-top: 1em;">Atmospheric distorted videos of moving object</h5>
-                        <p>Left: Distorted video. Right: Restored video. <a href="https://data.bris.ac.uk/data/dataset/1yh1e51t7tg2g2q9cwv96sdfc2" target="_blank">Download PNG</a></p>
-                        <iframe width="853" height="280" src="https://www.youtube.com/embed/G-sIRUOgIQc?rel=0" frameborder="0" allowfullscreen></iframe> 
-            </div>
             <hr />
             <div class="container-md">
                 <h2 id="downloads">Downloads</h2>
                 <ul>
                 <li><a href="https://seis.bristol.ac.uk/~eexna/research/CLEAR/CLEAR_flyer_pui.pdf"  target="_blank">Flyer</a></li>
                 </ul>
-                <h5>Publications</h5>
-                <ul>
-                    <li>CLEAR1: Atmospheric Turbulence Mitigation Using Complex Wavelet-Based Fusion <a href="https://github.com/pui-nantheera/atmospheric-turbulence-removal">[CODE]</a> <a href="https://ieeexplore.ieee.org/document/6471221">[PDF]</a> <a href="https://www-sigproc.eng.cam.ac.uk/foswiki/pub/Main/NGK/Anantrasirichai_etal_draft_jrnl_12jul2012_c.pdf">[Preprint PDF]</a></li>
-                    <li>CLEAR2: Atmospheric Turbulence Mitigation for Sequences with Moving Objects Using Recursive Image Fusion <a href="https://ieeexplore.ieee.org/document/8451755">[PDF]</a> <a href="https://arxiv.org/pdf/1808.03550.pdf">[Preprint PDF]</a></li>
 
-                    <li>Mitigating the effects of atmospheric distortion using DT-CWT fusion (ICIP 2012). <a href="https://seis.bristol.ac.uk/~eexna/papers/CLEARicip.pdf">[PDF]</a> </li>
-                        <li>Mitigating the effects of atmospheric distortion on video imagery : A review, University of Bristol, 2011. <a href="https://seis.bristol.ac.uk/~eexna/research/papers/heathaze_review.pdf">[PDF]</a></li>
-                        <li><span class="papername">Mitigating the effects of atmospheric distortion : A report</span>. University of Bristol, 2012. <a href="https://seis.bristol.ac.uk/~eexna/papers/heathaze_report.pdf">[PDF]</a></li>
-                </ul>
-                <h5>Sequences</h5>
-                <ul>
-                    <li><a href="https://data.bris.ac.uk/data/dataset/1yh1e51t7tg2g2q9cwv96sdfc2"  target="_blank">BVI-CLEAR</a></li>
-                    <li><a href="https://uob-my.sharepoint.com/:f:/g/personal/eexna_bristol_ac_uk/Ep6EwOj_t1BHqrIsdrY3XfsBMWtxpMSrsDFOk5MaRJWfQg?e=r5yT9X"  target="_blank">Simulated datasets</a></li>
-                    <li><a href="https://uob-my.sharepoint.com/:f:/g/personal/eexna_bristol_ac_uk/EvJ6pWTPF7dGpcQcwK1oUSABpjvyCo5RpDzeI5GrbHXyIQ?e=Di1MrG"  target="_blank">CLEAR1 datasets</a></li>
-                    <li><a href="https://uob-my.sharepoint.com/:f:/g/personal/eexna_bristol_ac_uk/ErXll5srTxJBpeQCaU_2lyQBUbkYYOMOP2lxliy8DLC0Hw?e=0FSEcD"  target="_blank">CLEAR2 datasets</a></li>
-                    <!-- Datasets are saved at 
-                        My files > Heathaze > distorted sequences > Simulated_data
-                        My files > GOOGLE_DIRVE > Heathaze_datasets
-                        My files > Heathaze > distorted sequences
-                    -->
-                </ul>
             </div>
             <hr />
-            <div class="container-md">
-                <h2>Citation</h2>
-                <pre class="citation">
-@ARTICLE{6471221,  author={N. {Anantrasirichai} and A. {Achim} and N. G. {Kingsbury} and D. R. {Bull}},  journal={IEEE Transactions on Image Processing},   title={Atmospheric Turbulence Mitigation Using Complex Wavelet-Based Fusion},   year={2013},  volume={22},  number={6},  pages={2398-2408},  doi={10.1109/TIP.2013.2249078}}
-  </pre>
-                <pre class="citation">
-@INPROCEEDINGS{8451755,  author={N. {Anantrasirichai} and A. {Achim} and D. {Bull}},  booktitle={2018 25th IEEE International Conference on Image Processing (ICIP)},   title={Atmospheric Turbulence Mitigation for Sequences with Moving Objects Using Recursive Image Fusion},   year={2018},  pages={2895-2899},  doi={10.1109/ICIP.2018.8451755}}
-  </pre>
-            </div>
-
         </div>
     </div>
 </body>
